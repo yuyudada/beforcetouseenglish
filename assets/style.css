@@ -1,0 +1,323 @@
+/* 团员评议系统自定义样式 */
+
+/* 全局样式 */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+}
+
+/* 导航栏样式 */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* 卡片样式 */
+.report-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.report-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px 12px 0 0 !important;
+    padding: 15px 20px;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.card-subtitle {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* 评分样式 */
+.rating-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.star-rating {
+    display: flex;
+    gap: 3px;
+}
+
+.star {
+    font-size: 1.5rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.star:hover,
+.star.active {
+    color: #ffc107;
+}
+
+.star.editable:hover {
+    color: #ffc107;
+    transform: scale(1.1);
+}
+
+.rating-info {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.rating-info .badge {
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+/* 内容区域 */
+.card-body {
+    padding: 20px;
+}
+
+.report-content {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    max-height: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.report-content.expanded {
+    max-height: none;
+}
+
+.read-more {
+    color: #007bff;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* 操作按钮 */
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-action {
+    border-radius: 20px;
+    padding: 6px 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-rate {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    border: none;
+    color: white;
+}
+
+.btn-rate:hover {
+    background: linear-gradient(45deg, #ee5a24, #ff6b6b);
+    transform: translateY(-1px);
+    color: white;
+}
+
+.btn-edit {
+    background: linear-gradient(45deg, #74b9ff, #0984e3);
+    border: none;
+    color: white;
+}
+
+.btn-edit:hover {
+    background: linear-gradient(45deg, #0984e3, #74b9ff);
+    transform: translateY(-1px);
+    color: white;
+}
+
+.btn-delete {
+    background: linear-gradient(45deg, #fd79a8, #e84393);
+    border: none;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: linear-gradient(45deg, #e84393, #fd79a8);
+    transform: translateY(-1px);
+    color: white;
+}
+
+/* 模态框样式 */
+.modal-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 0.375rem 0.375rem 0 0;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+/* 表单样式 */
+.form-label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 8px;
+}
+
+.form-control,
+.form-select {
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    padding: 10px 15px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* 加载动画 */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 空状态样式 */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #6c757d;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.empty-state h3 {
+    margin-bottom: 15px;
+    color: #495057;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .card-header {
+        padding: 12px 15px;
+    }
+    
+    .card-body {
+        padding: 15px;
+    }
+    
+    .card-actions {
+        flex-direction: column;
+    }
+    
+    .btn-action {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .rating-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+}
+
+/* 工具提示样式 */
+.tooltip-inner {
+    background-color: #333;
+    color: white;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+}
+
+/* 成功/错误消息样式 */
+.alert {
+    border-radius: 10px;
+    border: none;
+    font-weight: 500;
+}
+
+.alert-success {
+    background: linear-gradient(45deg, #00b894, #00a085);
+    color: white;
+}
+
+.alert-danger {
+    background: linear-gradient(45deg, #e17055, #d63031);
+    color: white;
+}
+
+/* 导出按钮样式 */
+.btn-export {
+    background: linear-gradient(45deg, #00b894, #00a085);
+    border: none;
+    color: white;
+    border-radius: 25px;
+    padding: 8px 20px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-export:hover {
+    background: linear-gradient(45deg, #00a085, #00b894);
+    transform: translateY(-1px);
+    color: white;
+}
+
+/* 发表按钮样式 */
+.btn-publish {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border: none;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 25px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-publish:hover {
+    background: linear-gradient(45deg, #764ba2, #667eea);
+    transform: translateY(-1px);
+    color: white;
+}
